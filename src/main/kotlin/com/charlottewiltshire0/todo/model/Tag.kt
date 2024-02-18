@@ -13,7 +13,11 @@ class Tag {
     var name: String? = null
 
     @Column(nullable = false)
-    var created_at: Long? = null
+    var created_at: Long = 0
+        get() = field
+        set(value) {
+            field = System.currentTimeMillis()
+        }
 
     @Column(nullable = false)
     var updated_at: Long? = null

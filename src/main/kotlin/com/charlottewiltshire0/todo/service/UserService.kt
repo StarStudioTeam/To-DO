@@ -11,7 +11,7 @@ class UserService(
     fun save(user: User): User? {
         val found = userRepository.findByGmail(user.gmail)
 
-        return if (found != null) {
+        return if (found == null) {
             val savedUser = userRepository.save(user)
             savedUser
         } else null

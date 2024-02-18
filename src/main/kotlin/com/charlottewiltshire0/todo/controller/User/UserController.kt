@@ -27,16 +27,15 @@ class UserController(
         user.username = body.username
         user.gmail = body.gmail
         user.password = body.password
-//        userService.save(user)
+        userService.save(user)
 
-//        return ResponseEntity.ok(UserResponse(
-//            id = user.id,
-//            username = user.username,
-//            gmail = user.gmail,
-//            created_at = user.created_at
-//        ))
-
-        return ResponseEntity.ok(userService.save(user))
+        val response = UserResponse(
+            id = user.id,
+            username = user.username,
+            gmail = user.gmail,
+            created_at = user.created_at
+        )
+        return ResponseEntity.ok(response)
     }
 }
 

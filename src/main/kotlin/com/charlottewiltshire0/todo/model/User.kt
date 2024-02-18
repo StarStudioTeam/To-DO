@@ -27,10 +27,9 @@ class User {
             field = passwordEncoder.encode(value)
         }
     @Column(nullable = false, updatable = false)
-    var created_at: String = ""
+    var created_at: Long = 0
         get() = field
         set(value) {
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-            field = value ?: LocalDateTime.now().format(formatter)
+            field = System.currentTimeMillis()
         }
 }

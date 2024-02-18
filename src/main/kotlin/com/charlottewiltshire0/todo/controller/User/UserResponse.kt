@@ -4,5 +4,5 @@ data class UserResponse(
     val id: Long? = null,
     val username: String? = null,
     val gmail: String? = null,
-    val created_at: String? = null
+    val created_at: Long? = null
 )

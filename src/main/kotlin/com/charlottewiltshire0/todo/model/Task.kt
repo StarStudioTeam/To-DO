@@ -16,7 +16,11 @@ class Task {
     var description: String? = null
 
     @Column(nullable = false)
-    var created_at: Long? = null
+    var created_at: Long = 0
+        get() = field
+        set(value) {
+            field = System.currentTimeMillis()
+        }
 
     @Column
     var due_date: Long? = null
