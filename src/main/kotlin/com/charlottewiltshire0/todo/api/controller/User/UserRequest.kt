@@ -1,4 +1,4 @@
-package com.charlottewiltshire0.todo.controller.User
+package com.charlottewiltshire0.todo.api.controller.User
 
 class UserRequest {
     val username: String? = null

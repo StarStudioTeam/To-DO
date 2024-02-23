@@ -1,4 +1,4 @@
-package com.charlottewiltshire0.todo.controller.User
+package com.charlottewiltshire0.todo.api.controller.User
 
 data class UserResponse(
     val id: Long? = null,
