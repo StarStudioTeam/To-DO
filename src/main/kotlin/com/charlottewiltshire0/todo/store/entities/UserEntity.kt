@@ -1,11 +1,7 @@
 package com.charlottewiltshire0.todo.store.entities
 
 import jakarta.persistence.*
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import java.time.Instant
-
-
-
 @Entity
 @Table(name = "users")
 data class UserEntity (
