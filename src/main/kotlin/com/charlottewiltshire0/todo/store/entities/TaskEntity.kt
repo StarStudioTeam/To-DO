@@ -10,7 +10,7 @@ data class TaskEntity (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false, unique = true)
     var title: String,
 
     var description: String?,
