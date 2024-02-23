@@ -2,16 +2,17 @@ package com.charlottewiltshire0.todo.api.factories
 
 import com.charlottewiltshire0.todo.api.dto.UserDto
 import com.charlottewiltshire0.todo.store.entities.UserEntity
-import org.springframework.stereotype.Component
+import java.time.Instant
 
-@Component
-class ProjectDtoFactory {
-    fun makeProjectDto(entity: UserEntity): UserDto {
-        return UserDtoвbuilder()
-            .id(entity.getId())
-            .name(entity.getName())
-            .createdAt(entity.getCreatedAt())
-            .updatedAt(entity.getUpdatedAt())
-            .build()
+object UserDtoFactory {
+    fun createUserDTO(userEntity: UserEntity): UserDto {
+        return UserDto(
+            id = userEntity.id,
+            username = userEntity.username,
+            gmail = userEntity.gmail,
+            password = userEntity.password,
+            createdAt = userEntity.created_at
+        )
     }
 }
+

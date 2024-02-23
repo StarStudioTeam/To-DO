@@ -2,6 +2,7 @@ package com.charlottewiltshire0.todo.store.entities
 
 import jakarta.persistence.*
 import java.time.Instant
+
 @Entity
 @Table(name = "users")
 data class UserEntity (

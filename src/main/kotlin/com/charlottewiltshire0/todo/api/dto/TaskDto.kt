@@ -3,6 +3,7 @@ package com.charlottewiltshire0.todo.api.dto
 import com.charlottewiltshire0.todo.store.entities.Priority
 import com.charlottewiltshire0.todo.store.entities.Status
 import java.time.Instant
+
 data class TaskDto(
     val id: Long,
     val title: String,

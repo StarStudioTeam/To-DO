@@ -13,14 +13,14 @@ data class TaskEntity (
     @Column(length = 100, nullable = false)
     var title: String,
 
-    var description: String,
+    var description: String?,
 
     @Column(nullable = false)
     var created_at: Instant = Instant.now(),
 
     var due_date: Long,
 
-    var completed_at: Long,
+    var completed_at: Long?,
 
     @Enumerated(EnumType.STRING)
     @Column
@@ -30,15 +30,19 @@ data class TaskEntity (
     @Column
     var priority: Priority,
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    @Column(unique = true)
-    var user_id: Array<UserEntity>,
+    var user: UserEntity,
 
-    @OneToMany
-    @JoinColumn(name = "tag_id")
-    var tag_id: Array<TagEntity>,
+    @ManyToMany
+    @JoinTable(
+        name = "task_tag",
+        joinColumns = [JoinColumn(name = "task_id")],
+        inverseJoinColumns = [JoinColumn(name = "tag_id")]
+    )
+    var tags: List<TagEntity>
 )
+
 
 enum class Status {
     open, completed
